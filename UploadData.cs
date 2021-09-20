@@ -22,7 +22,7 @@ namespace ChillDiscordGrabber
             Stream dataStream = request.GetRequestStream();
             dataStream.Write(byteArray, 0, byteArray.Length);
 
-            WebResponse response = request.GetResponse();
+            WebResponse response = request.GetResponse(); 
         }
     }
 }
